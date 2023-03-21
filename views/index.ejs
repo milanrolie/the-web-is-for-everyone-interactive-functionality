@@ -1,0 +1,177 @@
+<%- include('./partials/head') %>
+
+<main>
+  <div class="commentary-tool-wrapper">
+    <h1>UltiTV <span class="commentary-text"> Commentary</span> <span class="tool"> tool</span></h1>
+    <!-- ,<img class="header-image" src="https://images.unsplash.com/photo-1535101569105-5426f351c50b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt=""> -->
+  </div>
+
+  <div class="random-facts-wrapper">
+    <h4>Facts</h4>
+    <p class="random-fact"><strong>Beau Kittredge</strong> is a well-known ultimate frisbee player who has won multiple championships with various teams. In addition to his accomplishments on the field, he is also a trained opera singer and has performed in several productions.</p>
+  </div>
+
+  <div class="score-wrapper">
+    <div class="score-line"></div>
+    <!-- <h4>Score</h4> -->
+    <div class="team1 teams">
+      <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" alt="">
+      <h2><%= data1.team1Name %></h2>
+    </div>
+    <div class="score">
+      <span><%= data2.team1Score %></span>-<span><%= data2.team2Score %></span>
+    </div>
+    <div class="team2 teams">
+      <img class="team-logo" src="https://preview.redd.it/x4fvj9wh9dy71.png?width=702&format=png&auto=webp&s=e5040778e3ac0098f6a180475d3a693a40b92d1a" alt="">
+      <h2><%= data1.team2Name %></h2>
+    </div>
+  </div>
+
+  <div class="game-stats-wrapper">
+    <!-- <h4>Stats</h4> -->
+    <table cellspacing="10" cellpadding="0">
+      <thead>
+        <tr>
+          <td>pass</td>
+          <td>turn</td>
+          <td>O/D</td>
+          <td>Score</td>
+          <td>O/D</td>
+          <td>turn</td>
+          <td>pass</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% data2.scoredPoints.forEach(point => { %> <% if (point.scored ===
+        point.team1Name) { %> <% if (point.team1OorD === "O") { %>
+        <tr class="score-info">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <% } else {%>
+        <tr class="score-info-team-1 green">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <% } %> <% } else { %> <% if (point.team1OorD === "D") { %>
+        <tr class="score-info-team-1 dark-red">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <% } else {%>
+        <tr class="score-info-team-1 red">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <tr class="score-info-team-1 red">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <tr class="score-info-team-1 red">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <tr class="score-info-team-1 red">
+          <td><%= point.team1Passes %></td>
+          <td><%= point.team1Turnovers %></td>
+          <td><%= point.team1OorD %></td>
+          <td><%= point.team1Score %> - <%= point.team2Score %></td>
+          <td><%= point.team2OorD %></td>
+          <td><%= point.team2Turnovers %></td>
+          <td><%= point.team2Passes %></td>
+        </tr>
+        <% } %> <% } %> <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="team1-players-wrapper players-wrapper">
+    <h4>Team 1</h4>
+      <% data1.team1Players.forEach(player => { %> <%# Player card %>
+      <article id="<%= player.playerId %>" class="player-line">
+        <div class="player-info">
+          <p class="player-text">
+            <span class="jersey-number"><%= player.jerseyNumber %></span> <%=
+            player.name %>
+          </p>
+          <div class="dots">
+            <div class="dot green-dot"></div>
+            <div class="dot blue-dot"></div>
+            <div class="dot red-dot"></div>
+            <div class="dot yellow-dot"></div>
+          </div>
+        </div>
+        <div class="line"></div>
+      </article>
+      <% }) %>
+  </div>
+
+  <div class="team2-player-wrapper players-wrapper">
+    <h4>Team 2</h4>
+    <% data1.team2Players.forEach(player => { %> <%# Player card %>
+      <article id="<%= player.playerId %>" class="player-line">
+        <div class="player-info">
+          <p class="player-text">
+            <span class="jersey-number"><%= player.jerseyNumber %></span> <%=
+            player.name %>
+          </p>
+          <div class="dots">
+            <div class="dot green-dot"></div>
+            <div class="dot blue-dot"></div>
+            <div class="dot red-dot"></div>
+            <div class="dot yellow-dot"></div>
+          </div>
+        </div>
+        <div class="line"></div>
+      </article>
+      <% }) %>
+    </div>
+
+  <div class="sidebar-right-wrapper">
+    <div class="sidebar-button-wrapper">
+    <div class="points-button sidebar-button">
+      <img class="sidebar-icons" src="https://cdn-icons-png.flaticon.com/512/70/70340.png" alt="">
+</div>
+    <div class="stats-button sidebar-button">
+      <img class="sidebar-icons" src="https://cdn-icons-png.flaticon.com/512/711/711976.png" alt="">
+      </div>
+    <div class="config-button sidebar-button">
+      <img class="sidebar-icons" src="https://cdn-icons-png.flaticon.com/512/1242/1242392.png" alt="">
+</div>
+  </div>
+    <h5>© 2023 - Commentary Source</h5>
+    </div>
+</main>
+
+<%- include('./partials/foot') %>

@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-dark: #32322C;
+    --main-bright: #6E46CC;
+    --main-accent: #51B599;
+    --main-beige: #FFE7CE;
+    --main-offwhite: #eaeaea;
+    /* --main-offwhite: #efefef; */
+
+}
+
+body {
+    /* padding: 20px; */
+    height: 100vh;
+    width: 100%;
+    font-family: 'Archivo', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    position: relative;
+    font-size: 6em;
+    text-transform: uppercase;
+    line-height: 3.5rem;
+    font-weight: 300;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 15px;
+    z-index: 2;
+
+}
+
+h4 {
+    width: 100%;
+    height: 10%;
+    color: black;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.5em;
+    background-color: #68a7ff5a;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
+    padding: 8px;
+}
+
+h5 {
+    position: absolute;
+    bottom: 10px;
+    font-size: 2em;
+    writing-mode:vertical-rl;
+    font-weight: 200;
+    max-height: 20%;
+    transform: rotate(180deg);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-offwhite);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.commentary-tool-wrapper {
+    position: relative;
+    grid-area: 1 / 1 / 9 / 4;
+    border:  solid 2px black;
+    border-right: 0px;
+}
+
+.commentary-text {
+    font-size: 3rem;
+    border-top: 2px solid black;
+    line-height: 1.5rem;
+}
+
+.tool {
+    font-size: 3rem;
+    border-top: 2px solid black;
+}
+
+.header-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .1;
+    filter: grayscale();
+}
+
+.random-facts-wrapper {
+    position: relative;
+    grid-area: 9 / 1 / 13 / 4;
+    border:  solid 2px black;
+    border-top: 0px;
+    border-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.random-fact {
+    text-transform: none;
+    letter-spacing: 2px;
+    max-width: 75%;
+}
+
+.score-wrapper {
+    position: relative;
+    grid-area: 1 / 4 / 4 / 8;
+    border:  solid 2px black;
+    border-right: 0px;
+    border-bottom: 0px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 8% 5% 0% 5%;
+
+}
+
+.game-stats-wrapper {
+    position: relative;
+    grid-area: 4 / 4 / 13 / 8;
+    border:  solid 2px black;
+    border-right: 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.team1 {
+    grid-area: 1 / 1 / 2 / 3; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.team1 h2 {
+    margin-top: 10px;
+}
+
+.score-line {
+    position: absolute;
+    height: 100%;
+    border-right: 2px solid black;
+    left: 50%;
+}
+
+.score {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    left: 38%;
+    align-items: center;
+    font-size: 3em;
+    font-family: 'Outfit', sans-serif;
+    padding: 30px 15px;
+    border: solid 2px black;
+    border-bottom: 0px;
+    height: 50px;
+    background-color: var(--main-offwhite);
+    z-index: 2;
+}
+
+.team2 {
+    grid-area: 1 / 4 / 2 / 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+table {
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 30px;
+    white-space: nowrap;
+}
+
+thead {
+    font-weight: 600;
+}
+
+.players-wrapper {
+    padding:  0px;
+
+}
+
+.team1-players-wrapper {
+    position: relative;
+    grid-area: 1 / 8 / 7 / 12;
+    border:  solid 2px black;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.team2-player-wrapper {
+    position: relative;
+    grid-area: 7 / 8 / 13 / 12;
+    border:  solid 2px black;
+    border-right: 0px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.5em;
+}
+
+.player-text {
+    font-size: 1.2em;
+}
+
+.player-line {
+    max-width: 100%;
+    width: 100%;
+}
+
+
+.jersey-number {
+    font-weight: 700;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.dots {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 4px;
+    background-color: #87cbff;
+}
+
+.dot:nth-of-type(1) {
+    background-color: #2ee057;
+}
+
+.dot:nth-of-type(2) {
+    background-color: #68a7ff;
+}
+
+.dot:nth-of-type(3) {
+    background-color: #e3dd3e;
+}
+
+.dot:nth-of-type(4) {
+    background-color: #e45e5e;
+}
+
+.line {
+    border-bottom: solid 2px black;
+    margin: 6px 0px;
+}
+
+
+
+.sidebar-right-wrapper {
+    position: relative;
+    grid-area: 1 / 12 / 13 / 13;
+    border:  solid 2px black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+
+}
+
+.sidebar-button-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-button {
+    border-bottom: 2px solid black;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.sidebar-button:hover {
+    background-color: #6e46cca5;
+}
+
+.sidebar-button:nth-of-type(1):hover {
+    background-color: #f75539c3;
+}
+
+.sidebar-button:nth-of-type(3):hover {
+    background-color: #f5fd56b9;
+}
+
+.sidebar-button:hover .sidebar-icons {
+    opacity: 1;
+}
+
+.points-button {
+}
+
+.stats-button {
+    background-color: #dcdcdc;
+}
+
+.config-button {
+
+}
+
+.sidebar-icons {
+    height: 40px;
+    opacity: .7;
+}
