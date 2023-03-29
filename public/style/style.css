@@ -70,6 +70,7 @@ h5 {
 }
 
 main {
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: var(--main-offwhite);
@@ -79,7 +80,8 @@ main {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     transition: .5s;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;}
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
 
 .commentary-tool-wrapper {
     position: relative;
@@ -449,4 +451,86 @@ thead {
 .icon-darkmode.darkmode {
     mix-blend-mode: difference;
 
+}
+
+.form-overlay-wrapper {
+    position: absolute;
+    grid-area: 1 / 8 / 13 / 12;
+    border: var(--main-border);
+    border-right: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-offwhite);
+    z-index: 1;
+    transition: .3s;
+}
+
+.player-form {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 40px;
+    border-bottom: var(--main-border);
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #03656300;
+    padding-left: 10px;
+    font-size: 1em;
+    color: var(--main-dark);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--main-bright);
+}
+
+.label-form-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: var(--main-border);
+    padding: 5px;
+}
+
+
+label {
+    width: max-content;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    height: 37px;
+    background-color: var(--main-bright);
+}
+
+.form-questions label {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: .9em;
+    padding: 5px;
+
+}
+
+.questions-label {
+    border: var(--main-border);
+    border-left: none;
+    border-right: none;
+}
+
+#submit {
+    border: none;
+    color: var(--main-dark);
+    width: 100%;
+    cursor: pointer;
 }
