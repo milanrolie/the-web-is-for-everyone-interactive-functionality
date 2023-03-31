@@ -36,18 +36,17 @@ app.get("/", async function (request, response) {
 });
 
 app.post("/", (request, response) => {
-
-  // console.log(request.body)
+  
   request.body.answers = [
     {
       content: request.body.content,
       questionId: request.body.question
     }
   ];
-
-  console.log(request.body.answers);
-
-
+  console.log(request.body)
+  
+  
+  
   postJson(postUrl, request.body).then((data) => {
     let newPlayer = { ...request.body };
     if (data.success) {
