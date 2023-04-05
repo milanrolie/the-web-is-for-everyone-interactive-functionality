@@ -1,5 +1,5 @@
-<img width="869" alt="image" src="https://user-images.githubusercontent.com/112857190/230051775-ba873960-0c55-45da-a55b-e735544322fd.png">
-
+<img width="892" alt="image" src="https://user-images.githubusercontent.com/112857190/230054381-20383015-55ed-4285-85d2-58cc1cc0a7d2.png">
+<img width="410" alt="image" src="https://user-images.githubusercontent.com/112857190/230054891-2852d062-d4f9-4312-b325-79b1462973dc.png">
 
 <h3>📚Inhoudsopgave</h3>
 <ul>
@@ -10,8 +10,7 @@
 </ul>
 
 <h3 id="#Opdracht"> 👨🏼‍💼 Opdracht</h3>
-Ontwerp en ontwikkel een server-side website voor een opdrachtgever.
-
+Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
 
 
         
