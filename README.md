@@ -1,3 +1,4 @@
+<img width="869" alt="image" src="https://user-images.githubusercontent.com/112857190/230051775-ba873960-0c55-45da-a55b-e735544322fd.png">
 
 
 <h3>📚Inhoudsopgave</h3>
