@@ -1,7 +1,14 @@
 let initialTheme = true;
 const darkButton = document.querySelector('.darkmode')
+const addPlayerButton = document.querySelector('.points-button')
+const addPlayerWrapper = document.querySelector('.form-overlay-wrapper')
 
 darkButton.addEventListener ('click', toggleDarkMode);
+addPlayerButton.addEventListener ('click', toggleAddPlayer)
+
+function toggleAddPlayer() {
+    addPlayerWrapper.classList.toggle ('show-player')
+}
 
 function toggleDarkMode() {
     const root = document.documentElement;

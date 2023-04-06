@@ -192,7 +192,9 @@ main {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    z-index: 2;
     padding: 5% 7% 0% 7%;
+    background-color: var(--main-offwhite);
 }
 
 .game-stats-wrapper {
@@ -203,7 +205,8 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
+    opacity: 2;
+    background-color: var(--main-offwhite);
 }
 
 .team1 {
@@ -314,6 +317,7 @@ thead {
     grid-area: 1 / 8 / 13 / 12;
     border: var(--main-border);
     border-right: 0px;
+    overflow: hidden;
 }
 
 .player-info {
@@ -336,7 +340,6 @@ thead {
     background-color: #cccccc;
     cursor: pointer;
 }
-
 
 .info-icon {
     height: 18px;
@@ -435,13 +438,9 @@ thead {
     opacity: 1;
 }
 
-.points-button {}
-
 .stats-button {
     background-color: #dcdcdc;
 }
-
-.config-button {}
 
 .sidebar-icons {
     height: 40px;
@@ -450,19 +449,25 @@ thead {
 
 .icon-darkmode.darkmode {
     mix-blend-mode: difference;
-
 }
 
 .form-overlay-wrapper {
     position: absolute;
+    top: 0;
+    left: 0;
     grid-area: 1 / 8 / 13 / 12;
-    border: var(--main-border);
     border-right: 0px;
     height: 100%;
     width: 100%;
     background-color: var(--main-offwhite);
     z-index: 1;
     transition: .3s;
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+.show-player {
+    transform: translateX(0);
 }
 
 .player-form {
@@ -503,7 +508,6 @@ input:focus {
     padding: 5px;
 }
 
-
 label {
     width: max-content;
 }
@@ -519,7 +523,7 @@ input[type=number]::-webkit-inner-spin-button {
     height: 40px;
     font-size: .9em;
     padding: 5px;
-
+    max-width: 100%;
 }
 
 .questions-label {

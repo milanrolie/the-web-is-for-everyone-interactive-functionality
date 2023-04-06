@@ -349,6 +349,54 @@
                   <div class="line"></div>
                 </article>
                 <% }) %>
+
+                <div class="form-overlay-wrapper">
+                  <h4>Add player</h4>
+                  <div class="player-form">
+                    <form action="/" method="POST" name="newPlayer">
+  
+                      <div class="form-row">
+                        <div class="label-form-wrapper">
+                          <label for="name">Name</label>
+                        </div>
+                        <input type="text" name="name" required />
+                      </div>
+  
+                      <div class="form-row">
+                        <div class="label-form-wrapper">
+                          <label for="gender">Gender</label>
+                        </div>
+                        <input type="text" name="gender" required />
+                      </div>
+  
+                      <div class="form-row">
+                        <div class="label-form-wrapper">
+                          <label for="jersey-number">Jersey number</label>
+                        </div>
+                        <input type="number" name="jerseyNumber" required />
+                      </div>
+  
+                      <div class="form-row">
+                        <div class="label-form-wrapper">
+                          <label for="team">Team</label>
+                        </div>
+                        <input type="text" name="team" required />
+                      </div>
+                      <h4>questions</h4>
+                      <div class="form-questions">
+                        <% data5.questions.forEach(question=> { %>
+                          <label for="<%= question.id %>"><%= question.title %>
+                            <input name="question" value="<%= question.id%>" hidden> 
+                          </label>
+                          <input class="questions-label" type="text" name="content" required />
+                          <% }) %>
+                            <button id="submit" type="submit">
+                              <h4>Submit</h4>
+                            </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
     </div>
     <div class="sidebar-right-wrapper">
       <div class="sidebar-button-wrapper">
@@ -370,53 +418,7 @@
       <h5>© 2023 - Commentary Source</h5>
     </div>
 
-              <div class="form-overlay-wrapper">
-                <h4>Add player</h4>
-                <div class="player-form">
-                  <form action="/" method="POST" name="newPlayer">
-
-                    <div class="form-row">
-                      <div class="label-form-wrapper">
-                        <label for="name">Name</label>
-                      </div>
-                      <input type="text" name="name" required />
-                    </div>
-
-                    <div class="form-row">
-                      <div class="label-form-wrapper">
-                        <label for="gender">Gender</label>
-                      </div>
-                      <input type="text" name="gender" required />
-                    </div>
-
-                    <div class="form-row">
-                      <div class="label-form-wrapper">
-                        <label for="jersey-number">Jersey number</label>
-                      </div>
-                      <input type="number" name="jerseyNumber" required />
-                    </div>
-
-                    <div class="form-row">
-                      <div class="label-form-wrapper">
-                        <label for="team">Team</label>
-                      </div>
-                      <input type="text" name="team" required />
-                    </div>
-                    <h4>questions</h4>
-                    <div class="form-questions">
-                      <% data5.questions.forEach(question=> { %>
-                        <label for="<%= question.id %>"><%= question.title %>
-                          <input name="question" value="<%= question.id%>" hidden> 
-                        </label>
-                        <input class="questions-label" type="text" name="content" required />
-                        <% }) %>
-                          <button id="submit" type="submit">
-                            <h4>Submit</h4>
-                          </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+             
   </main>
 
   <%- include('./partials/foot') %>
