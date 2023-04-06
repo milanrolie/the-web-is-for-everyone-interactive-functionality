@@ -538,3 +538,9 @@ input[type=number]::-webkit-inner-spin-button {
     width: 100%;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1200px) {
+    body {
+        padding: 0;
+    }
+}
